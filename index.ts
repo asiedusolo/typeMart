@@ -20,3 +20,14 @@ if(Number(product.price) >= 25){
 }else{
   shipping = 5
 }
+
+if(shippingAddress.match('New York')){
+  taxPercent = 0.1
+}else{
+  taxPercent = 0.05
+}
+
+taxTotal = Number(product.price) * taxPercent;
+total = Number(product.price) + taxTotal + shipping;
+
+console.log(`Product name: ${productName}\nShipping address: ${shippingAddress}\nPrice of the product: ${product.price}\nTax total: ${taxTotal}\nShipping: ${shipping}\nTotal amount: ${total}`)
